@@ -31,35 +31,30 @@ function Home({ AuthContext }) {
 
   return (
     <div>
-      <Container maxWidth="xl" sx={{ height: "100vh" }}>
+      <Container maxWidth="xl">
         <Box mt={1} mb={1}>
           <Typography
             variant="h5"
             component="div"
             gutterBottom
-            sx={{ fontWeight: 600, position: "fixed", top: "80px" }}
+            sx={{ fontWeight: 600 }}
           >
             Live Spaces
           </Typography>
-          <Stack
-            direction="row"
-            spacing={1}
-            sx={{ position: "fixed", top: "125px" }}
-          >
+          <Stack direction="row" spacing={1}>
             <CheckCircleIcon fontSize="small" />
             <Typography variant="body2" gutterBottom component="div">
               All NFTs on Cyber either belong to or were minted by their space
               creator.
             </Typography>
           </Stack>
-          <Box sx={{ position: "fixed", top: "170px" }}>
+          <Box mt={2} mb={3}>
             <FilterTags setFilterData={setFilterData} filterData={filterData} />
           </Box>
           <Grid
             container
             spacing={2}
-            mt={27}
-            sx={{ overflowY: "auto", height: "calc(100vh - 217px)" }}
+            sx={{ height: "calc(100vh - 217px)", overflow: "auto" }}
           >
             {NFTdata.filter((nft) => {
               return nft.filter === filterData;

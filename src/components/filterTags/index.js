@@ -36,7 +36,7 @@ export default function FilterTags({ setFilterData, filterData }) {
     },
   ];
   return (
-    <Stack direction="row" spacing={1}>
+    <Stack direction="row" spacing={1} sx={{ overflow: "auto" }}>
       {filters.map((filter) => (
         <Tag
           key={filter}

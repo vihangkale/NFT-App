@@ -4,7 +4,6 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
-import HotelIcon from "@mui/icons-material/Hotel";
 import { useNavigate, useLocation } from "react-router-dom";
 import Button from "@mui/material/Button";
 import CurrencyBitcoinIcon from "@mui/icons-material/CurrencyBitcoin";
@@ -19,10 +18,7 @@ const ResponsiveAppBar = ({ useAuth }) => {
     auth.signout(() => navigate("/"));
   }
   return (
-    <AppBar
-      position="static"
-      sx={{ bgcolor: "#000", position: "fixed", top: 0 }}
-    >
+    <AppBar position="static" sx={{ bgcolor: "#000" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters onClick={(e) => e.stopPropagation()}>
           <CurrencyBitcoinIcon
