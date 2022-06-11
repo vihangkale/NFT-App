@@ -8,6 +8,7 @@ import PetsIcon from "@mui/icons-material/Pets";
 export default function FilterTags({ setFilterData, filterData }) {
   let filters = [
     {
+      id: "1",
       name: "24h Trending",
       icon: (
         <LocalFireDepartmentIcon
@@ -16,21 +17,25 @@ export default function FilterTags({ setFilterData, filterData }) {
         />
       ),
     },
-    { name: "Latest Shows" },
-    { name: "Most Popular" },
+    { id: "2", name: "Latest Shows" },
+    { id: "3", name: "Most Popular" },
     {
+      id: "4",
       name: "In Genesis",
       icon: <DiamondIcon fontSize="small" style={{ color: "#0091ea" }} />,
     },
     {
+      id: "5",
       name: "In Temple",
       icon: <TempleHinduIcon fontSize="small" style={{ color: "#b8860b" }} />,
     },
     {
+      id: "6",
       name: "In Void",
       icon: <CycloneIcon fontSize="small" style={{ color: "blueGrey" }} />,
     },
     {
+      id: "7",
       name: "#BAYC",
       icon: <PetsIcon fontSize="small" style={{ color: "#00e676" }} />,
     },
@@ -39,7 +44,7 @@ export default function FilterTags({ setFilterData, filterData }) {
     <Stack direction="row" spacing={1} sx={{ overflow: "auto" }}>
       {filters.map((filter) => (
         <Tag
-          key={filter}
+          key={filter.id}
           tagName={filter.name}
           tagIcon={filter.icon ? filter.icon : ""}
           setFilterData={setFilterData}

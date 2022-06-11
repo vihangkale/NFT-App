@@ -8,7 +8,7 @@ import Paper from "@mui/material/Paper";
 import Stack from "@mui/material/Stack";
 import axios from "axios";
 import SnackBar from "../../components/snackBar";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 export default function NFTCard({ NFTName, NFTOwner, NFTSerialNumber }) {
   let [cryptoResponse, setCryptoResponse] = useState("");
@@ -21,10 +21,18 @@ export default function NFTCard({ NFTName, NFTOwner, NFTSerialNumber }) {
         if (response.status === 200) {
           setCryptoResponse(response.data);
           setOpenSnackbar(true);
+          setTimeout(() => {
+            setOpenSnackbar(false);
+          }, 5000);
         }
       })
       .catch(function (error) {
         console.log(error);
+        setCryptoResponse("Failed to create crpto block");
+        setOpenSnackbar(true);
+        setTimeout(() => {
+          setOpenSnackbar(false);
+        }, 5000);
       });
   }
   return (

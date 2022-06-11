@@ -61,6 +61,7 @@ function Home({ AuthContext }) {
             }).map((nft) => (
               <Grid key={nft.id} item xs={12} sm={4} md={4} lg={4}>
                 <NFTCard
+                  key={nft.id}
                   NFTName={nft.name}
                   NFTOwner={nft.owner}
                   NFTSerialNumber={nft.serialNumber}
