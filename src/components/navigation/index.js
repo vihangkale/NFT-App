@@ -12,8 +12,6 @@ const ResponsiveAppBar = ({ useAuth }) => {
   let location = useLocation();
   let auth = useAuth();
 
-  console.log(location, "locationnn navvvv");
-
   function logOut() {
     auth.signout(() => navigate("/"));
   }

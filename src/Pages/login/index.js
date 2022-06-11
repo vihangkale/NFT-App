@@ -60,7 +60,6 @@ function Login({ useAuth }) {
         setEmailValidation(false);
       }
     }
-    console.log(targetName, "target name", targetValue, "target value");
     setUsers({
       email: targetName,
       password: targetValue,
