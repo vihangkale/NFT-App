@@ -1,4 +1,3 @@
-import * as React from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
@@ -7,10 +6,32 @@ import { CardActionArea } from "@mui/material";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Stack from "@mui/material/Stack";
+import axios from "axios";
+import SnackBar from "../../components/snackBar";
+import React, { useState, useEffect } from "react";
 
 export default function NFTCard({ NFTName, NFTOwner, NFTSerialNumber }) {
+  let [cryptoResponse, setCryptoResponse] = useState("");
+  let [openSnackbar, setOpenSnackbar] = useState(false);
+  function createCrypto() {
+    axios
+      .post("http://localhost:9000/createCrypto")
+      .then(function (response) {
+        console.log(response);
+        if (response.status === 200) {
+          setCryptoResponse(response.data);
+          setOpenSnackbar(true);
+        }
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
   return (
-    <Card sx={{ bgcolor: "black", color: "#fff" }}>
+    <Card
+      sx={{ bgcolor: "black", color: "#fff" }}
+      onClick={(e) => createCrypto()}
+    >
       <CardActionArea>
         <CardMedia
           component="img"
@@ -47,6 +68,11 @@ export default function NFTCard({ NFTName, NFTOwner, NFTSerialNumber }) {
           </Box>
         </CardContent>
       </CardActionArea>
+      <SnackBar
+        snackBarMessage={cryptoResponse}
+        openSnackbar={openSnackbar}
+        setOpenSnackbar={setOpenSnackbar}
+      />
     </Card>
   );
 }
