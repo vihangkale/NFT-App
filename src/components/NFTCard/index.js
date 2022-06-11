@@ -15,7 +15,7 @@ export default function NFTCard({ NFTName, NFTOwner, NFTSerialNumber }) {
   let [openSnackbar, setOpenSnackbar] = useState(false);
   function createCrypto() {
     axios
-      .post("http://localhost:9000/createCrypto")
+      .post("https://warm-basin-63765.herokuapp.com/createCrypto")
       .then(function (response) {
         console.log(response);
         if (response.status === 200) {
