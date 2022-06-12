@@ -58,16 +58,18 @@ function Home({ AuthContext }) {
           >
             {NFTdata.filter((nft) => {
               return nft.filter === filterData;
-            }).map((nft) => (
-              <Grid key={nft.id} item xs={12} sm={4} md={4} lg={4}>
-                <NFTCard
-                  key={nft.id}
-                  NFTName={nft.name}
-                  NFTOwner={nft.owner}
-                  NFTSerialNumber={nft.serialNumber}
-                />
-              </Grid>
-            ))}
+            }).map((nft) => {
+              return (
+                <Grid key={nft.id} item xs={12} sm={4} md={4} lg={4}>
+                  <NFTCard
+                    key={nft.id}
+                    NFTName={nft.name}
+                    NFTOwner={nft.owner}
+                    NFTSerialNumber={nft.serialNumber}
+                  />
+                </Grid>
+              );
+            })}
           </Grid>
         </Box>
       </Container>
