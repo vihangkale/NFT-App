@@ -19,9 +19,7 @@ const ResponsiveAppBar = ({ useAuth }) => {
     <AppBar position="static" sx={{ bgcolor: "#000" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters onClick={(e) => e.stopPropagation()}>
-          <CurrencyBitcoinIcon
-            sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}
-          />
+          <CurrencyBitcoinIcon sx={{ display: { md: "flex" }, mr: 1 }} />
           <Typography
             variant="h6"
             noWrap
@@ -29,7 +27,7 @@ const ResponsiveAppBar = ({ useAuth }) => {
             // href="/home"
             sx={{
               mr: 2,
-              display: { xs: "none", md: "flex" },
+              display: "flex",
               fontFamily: "monospace",
               fontWeight: 700,
               letterSpacing: ".3rem",
@@ -40,7 +38,7 @@ const ResponsiveAppBar = ({ useAuth }) => {
             NFT
           </Typography>
           {location.pathname !== "/" && (
-            <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+            <Box sx={{ flexGrow: 1 }}>
               <Button
                 onClick={logOut}
                 sx={{ my: 2, color: "white", display: "block" }}

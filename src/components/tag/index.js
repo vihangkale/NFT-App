@@ -7,7 +7,7 @@ export default function Tag({ tagIcon, tagName, setFilterData, filterData }) {
   }
   return (
     <Chip
-      icon={tagIcon ? tagIcon : ""}
+      icon={tagIcon ? tagIcon : null}
       label={tagName}
       variant="outlined"
       onClick={(e) => handleClick(tagName)}
